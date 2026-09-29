@@ -57,3 +57,9 @@ Small commits with prefixes: `feat:`, `fix:`, `chore:`, `docs:`. Example: `feat:
 - Every PRD feature works locally and in production.
 - No console errors, no secrets in git.
 - `README.md` has the live URL.
+
+## Environment Rules
+- This project runs in WSL Ubuntu. Before any command, run `which pnpm`; the path must start with `/home`. If it points to `/mnt/c`, stop and tell the user.
+- Never use `--prefix`. `cd` into `client` or `server` first, then run `pnpm` commands there.
+- Never read, print or edit any `.env` file.
+- If a command fails, fix it or report the exact error. Never say a step is complete unless every command succeeded and you verified the result.
